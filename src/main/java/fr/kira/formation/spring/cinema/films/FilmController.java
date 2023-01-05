@@ -11,7 +11,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -203,5 +206,4 @@ public class FilmController {
     public void deleteRealisateur(@PathVariable Integer id, @PathVariable Integer idRealisateur){
         this.service.deleteRealisateurById(id, idRealisateur);
     }
-
 }

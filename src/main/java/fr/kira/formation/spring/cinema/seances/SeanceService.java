@@ -1,9 +1,12 @@
 package fr.kira.formation.spring.cinema.seances;
 
+import fr.kira.formation.spring.cinema.films.Film;
+import fr.kira.formation.spring.cinema.salles.Salle;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,5 +36,15 @@ public class SeanceService {
         repository.deleteById(integer);
     }
 
+    public List<Film> findByDate(LocalDate date){
+        System.out.println(date);
+        System.out.println(repository.findByDate(date));
+        return repository.findByDate(date);
+    }
 
+    public List<Salle> findByDateLibre(LocalDate date){
+        System.out.println(date);
+        System.out.println(repository.findByDateLibre(date));
+        return repository.findByDateLibre(date);
+    }
 }

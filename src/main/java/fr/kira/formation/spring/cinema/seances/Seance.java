@@ -9,7 +9,7 @@ import lombok.Setter;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "sceances")
+@Table(name = "seances")
 @Getter
 @Setter
 public class Seance {
@@ -26,7 +26,7 @@ public class Seance {
 
     /**
      * @ManyToOne Specifie que la relation est de type ManyToOne
-     * Un film peut avoir plusieurs sceances
+     * Un film peut avoir plusieurs seances
      * Une sceance ne peut avoir qu'un seul
      *
      * @JoinColumn(name = "film_id") Specifie le nom de la colonne qui va contenir la clé étrangère

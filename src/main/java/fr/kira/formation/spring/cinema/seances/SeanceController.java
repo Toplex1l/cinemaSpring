@@ -1,8 +1,11 @@
 package fr.kira.formation.spring.cinema.seances;
 
+import fr.kira.formation.spring.cinema.films.Film;
+import fr.kira.formation.spring.cinema.salles.Salle;
 import lombok.Getter;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -35,5 +38,13 @@ public class SeanceController {
         service.deleteById(id);
     }
 
+    @GetMapping("/byDate/{date}")
+    public List<Film> findFilmsByDate(@PathVariable LocalDate date) {
+        return this.service.findByDate(date);
+    }
 
+    @GetMapping("/byDateLibre/{date}")
+    public List<Salle> findFilmsByReleaseDate(@PathVariable LocalDate date) {
+        return this.service.findByDateLibre(date);
+    }
 }

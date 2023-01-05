@@ -26,5 +26,5 @@ public class SalleService {
     public Iterable<Salle> findAll() {
         return repository.findAll();
     }
-
+    
 }
